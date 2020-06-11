@@ -48,6 +48,9 @@ class Thermostat {
 
   powerSaveOn() {
     this.isPowerSaveOn = true;
+    if (this.temperature > 25) {
+      this.temperature = 25;
+    }
   }
 
   resetTemp() {
