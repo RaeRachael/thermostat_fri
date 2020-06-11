@@ -31,14 +31,18 @@ $(document).ready(function() {    // as soon as a html page(DOM) is loaded , all
 
   function upDateTemperature() {
     $('#temperature').text(thermostat.temperature);
-    if (thermostat.energyUsage() === 'low-usage') {
-      $('#temperature').css('color', 'green');
-    }
-    else if (thermostat.energyUsage() === 'medium-usage') {
-      $('#temperature').css('color', 'black');
-    }
-    else 
-      $('#temperature').css('color', 'red');
+    $('#temperature').attr('class', thermostat.energyUsage());
+
+    // if (thermostat.energyUsage() === 'low-usage') {
+    //   $('#temperature').css('color', 'green');
+    // }
+    // else if (thermostat.energyUsage() === 'medium-usage') {
+    //   $('#temperature').css('color', 'black');
+    // }
+    // else
+    //   $('#temperature').css('color', 'red');
   }
+
+
 
 });
