@@ -1,4 +1,12 @@
 $(document).ready(function() {    // as soon as a html page(DOM) is loaded , allow this to run
+  
+  $('#current-city').change(function() {
+    var city = $('#current-city').val();
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=b8e52b0f2976114dfb19145fa2184283&units=metric', function(data) {
+      $('#current-temperature').text(data.main.temp)
+    })
+  })
+
   var thermostat = new Thermostat();
   upDateTemperature();
 
