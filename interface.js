@@ -1,5 +1,5 @@
 $(document).ready(function() {    // as soon as a html page(DOM) is loaded , allow this to run
-
+                                  // until everything is read or loaded don't run the page
   // $('#current-city').change(function() {
   //   var city = $('#current-city').val();
   //   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=b8e52b0f2976114dfb19145fa2184283&units=metric', function(data) {
@@ -28,6 +28,7 @@ $(document).ready(function() {    // as soon as a html page(DOM) is loaded , all
   var thermostat = new Thermostat();
   upDateTemperature();
 
+        // html          // Jq   // JS
   $('#temperature-down').click(function() { // this is an alternate version of .on('click'), with a sprinkle of jQuery syntactic sugar
     thermostat.downTemp();
     upDateTemperature();
@@ -57,7 +58,7 @@ $(document).ready(function() {    // as soon as a html page(DOM) is loaded , all
 
   function upDateTemperature() {
     $('#temperature').text(thermostat.temperature);
-    $('#temperature').attr('class', thermostat.energyUsage());
+    $('#temperature').attr('class', thermostat.energyUsage()); //**
 
     // if (thermostat.energyUsage() === 'low-usage') {
     //   $('#temperature').css('color', 'green');
