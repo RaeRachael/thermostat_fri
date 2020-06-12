@@ -58,6 +58,14 @@ button {
   border-color: #e2ccff;
 }
 
+#temperature-up {
+  color: red;
+}
+
+#temperature-down {
+  color: blue;
+}
+
 ::placeholder {
   color: white;
 }
