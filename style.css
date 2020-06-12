@@ -21,8 +21,13 @@
           box-sizing: border-box;
 }
 
+html * {
+  font-family: "Comic Sans MS",cursive,sans-serif;
+}
+
 body {
   background-image: url("images/ice-cubes.webp");
+  background-size: cover;
 }
 
 button {
@@ -33,6 +38,19 @@ button {
 #submit {
   background-color: #cdccff;
   border-color:  #cdccff;
+}
+
+#temperature {
+  width: 45px;
+  height: 45px;
+  border: solid blue 5px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+ font-family: 'Orbitron', sans-serif;
+			 src: url('https://fonts.googleapis.com/css?family=Orbitron');
+  font-size: 30px;
+  background-color: white;
 }
 
 #current-city {
