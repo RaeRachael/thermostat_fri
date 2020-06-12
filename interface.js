@@ -42,7 +42,6 @@ $(document).ready(function() {
     thermostat.powerSaveOn();
     $('#powersaving-on').attr('class', 'on');
     $('#powersaving-off').attr('class', 'off');
-    $('#power-saving-status').text('ON');
     upDateTemperature();
   });
 
@@ -50,7 +49,6 @@ $(document).ready(function() {
     thermostat.powerSaveOff();
     $('#powersaving-off').attr('class', 'on');
     $('#powersaving-on').attr('class', 'off');
-    $('#power-saving-status').text('OFF');
     upDateTemperature();
   });
 
