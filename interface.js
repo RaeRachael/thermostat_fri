@@ -1,11 +1,5 @@
-$(document).ready(function() {    // as soon as a html page(DOM) is loaded , allow this to run
-                                  // until everything is read or loaded don't run the page
-  // $('#current-city').change(function() {
-  //   var city = $('#current-city').val();
-  //   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=b8e52b0f2976114dfb19145fa2184283&units=metric', function(data) {
-  //     $('#current-temperature').text(data.main.temp)
-  //   })
-  // })
+$(document).ready(function() {
+  $('#powersaving-on').attr('class', 'on');
 
   function displayWeather(city) {
     var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
@@ -46,30 +40,23 @@ $(document).ready(function() {    // as soon as a html page(DOM) is loaded , all
 
   $('#powersaving-on').click(function (){
     thermostat.powerSaveOn();
-      $('#power-saving-status').text('ON');
-      upDateTemperature();
+    $('#powersaving-on').attr('class', 'on');
+    $('#powersaving-off').attr('class', 'off');
+    $('#power-saving-status').text('ON');
+    upDateTemperature();
   });
 
   $('#powersaving-off').click(function () {
     thermostat.powerSaveOff();
-      $('#power-saving-status').text('OFF');
-      upDateTemperature();
+    $('#powersaving-off').attr('class', 'on');
+    $('#powersaving-on').attr('class', 'off');
+    $('#power-saving-status').text('OFF');
+    upDateTemperature();
   });
 
   function upDateTemperature() {
     $('#temperature').text(thermostat.temperature);
-    $('#temperature').attr('class', thermostat.energyUsage()); //**
+    $('#temperature').attr('class', thermostat.energyUsage());
 
-    // if (thermostat.energyUsage() === 'low-usage') {
-    //   $('#temperature').css('color', 'green');
-    // }
-    // else if (thermostat.energyUsage() === 'medium-usage') {
-    //   $('#temperature').css('color', 'black');
-    // }
-    // else
-    //   $('#temperature').css('color', 'red');
   }
-
-
-
 });

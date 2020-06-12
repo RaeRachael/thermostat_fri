@@ -10,6 +10,14 @@
   color: red;
 }
 
+.on {
+  background-color: green;
+}
+
+.off {
+  background-color: #cdccff;
+}
+
 .main-box {
   background-color: #ccffff;
   width: 600px;
